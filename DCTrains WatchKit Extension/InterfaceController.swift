@@ -27,8 +27,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var tysons: WKInterfaceTable?
     @IBOutlet var metroCenter: WKInterfaceTable?
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: AnyObject?) {
+        super.awake(withContext: context)
     }
     
     override func willActivate() {
@@ -48,10 +48,10 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    func loadDataFor(table: WKInterfaceTable, station: String, track: String) {
-        func setTableText(s: String) {
+    func loadDataFor(_ table: WKInterfaceTable, station: String, track: String) {
+        func setTableText(_ s: String) {
             table.setNumberOfRows(1, withRowType: "default")
-            let row = table.rowControllerAtIndex(0) as! TableRowController
+            let row = table.rowController(at: 0) as! TableRowController
             row.destination.setText(s)
             row.minutes.setText(" ")
         }
@@ -59,16 +59,16 @@ class InterfaceController: WKInterfaceController {
         setTableText("Loading...")
         
         let urlPath = "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/\(station)"
-        guard let url = NSURL(string: urlPath) else {
+        guard let url = URL(string: urlPath) else {
             setTableText("Bad URL")
             return
         }
-        let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-        config.HTTPAdditionalHeaders = ["api_key": api_key]
-        config.timeoutIntervalForRequest = NSTimeInterval(5)
+        let config = URLSessionConfiguration.ephemeral
+        config.httpAdditionalHeaders = ["api_key": api_key]
+        config.timeoutIntervalForRequest = TimeInterval(5)
         
-        let session = NSURLSession(configuration: config)
-        let task = session.dataTaskWithURL(url, completionHandler: {
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: url, completionHandler: {
             data, response, error in
             
             var results: [(line: String, dest: String, min: String)] = []
@@ -80,7 +80,7 @@ class InterfaceController: WKInterfaceController {
             
             var json: AnyObject
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+                json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
             } catch {
                 setTableText("Bad JSON")
                 return
@@ -125,7 +125,7 @@ class InterfaceController: WKInterfaceController {
                     setTableText("Bad min")
                     return
                 }
-                minutes = minutes.capitalizedString
+                minutes = minutes.capitalized
                 
                 if group == track {
                     results.append((line: line, dest: destination, min: minutes))
@@ -136,24 +136,24 @@ class InterfaceController: WKInterfaceController {
                 return
             }
             table.setNumberOfRows(results.count, withRowType: "default")
-            for (index, result) in results.enumerate() {
-                let row = table.rowControllerAtIndex(index) as! TableRowController
+            for (index, result) in results.enumerated() {
+                let row = table.rowController(at: index) as! TableRowController
                 let lineColor: UIColor
                 switch result.line {
                 case "SV":
-                    lineColor = UIColor.lightGrayColor()
+                    lineColor = UIColor.lightGray
                 case "OR":
-                    lineColor = UIColor.orangeColor()
+                    lineColor = UIColor.orange
                 case "BL":
                     lineColor = UIColor(red: 0.5, green: 0.5, blue: 1.0, alpha: 1.0)
                 case "RD":
-                    lineColor = UIColor.redColor()
+                    lineColor = UIColor.red
                 case "GR":
-                    lineColor = UIColor.greenColor()
+                    lineColor = UIColor.green
                 case "YL":
-                    lineColor = UIColor.yellowColor()
+                    lineColor = UIColor.yellow
                 default:
-                    lineColor = UIColor.whiteColor()
+                    lineColor = UIColor.white
                 }
                 let dest = NSAttributedString(string: result.dest, attributes: [NSForegroundColorAttributeName:lineColor])
                 row.destination.setAttributedText(dest)
@@ -163,26 +163,26 @@ class InterfaceController: WKInterfaceController {
         task.resume()
     }
     
-    func loadIncidents(table: WKInterfaceTable) {
-        func setTableText(s: String) {
+    func loadIncidents(_ table: WKInterfaceTable) {
+        func setTableText(_ s: String) {
             table.setNumberOfRows(1, withRowType: "default")
-            let row = table.rowControllerAtIndex(0) as! IncidentController
+            let row = table.rowController(at: 0) as! IncidentController
             row.text.setText(s)
         }
         
         setTableText("Loading...")
         
         let urlPath = "https://api.wmata.com/Incidents.svc/json/Incidents"
-        guard let url = NSURL(string: urlPath) else {
+        guard let url = URL(string: urlPath) else {
             setTableText("Bad URL")
             return
         }
-        let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-        config.HTTPAdditionalHeaders = ["api_key": api_key]
-        config.timeoutIntervalForRequest = NSTimeInterval(5)
+        let config = URLSessionConfiguration.ephemeral
+        config.httpAdditionalHeaders = ["api_key": api_key]
+        config.timeoutIntervalForRequest = TimeInterval(5)
         
-        let session = NSURLSession(configuration: config)
-        let task = session.dataTaskWithURL(url, completionHandler: {
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: url, completionHandler: {
             data, response, error in
             
             var results: [String] = []
@@ -199,7 +199,7 @@ class InterfaceController: WKInterfaceController {
             
             var json: AnyObject
             do {
-                json = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions())
+                json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
             } catch {
                 setTableText("Bad JSON")
                 return
@@ -231,8 +231,8 @@ class InterfaceController: WKInterfaceController {
                 return
             }
             table.setNumberOfRows(results.count, withRowType: "default")
-            for (index, result) in results.enumerate() {
-                let row = table.rowControllerAtIndex(index) as! IncidentController
+            for (index, result) in results.enumerated() {
+                let row = table.rowController(at: index) as! IncidentController
                 row.text.setText(result)
             }
         })
