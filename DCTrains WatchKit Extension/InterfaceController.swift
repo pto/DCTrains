@@ -27,7 +27,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var tysons: WKInterfaceTable?
     @IBOutlet var metroCenter: WKInterfaceTable?
     
-    override func awake(withContext context: AnyObject?) {
+    override func awake(withContext context: Any?) {
         super.awake(withContext: context)
     }
     
@@ -78,7 +78,7 @@ class InterfaceController: WKInterfaceController {
                 return
             }
             
-            var json: AnyObject
+            var json: Any
             do {
                 json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
             } catch {
@@ -197,7 +197,7 @@ class InterfaceController: WKInterfaceController {
                 return
             }
             
-            var json: AnyObject
+            var json: Any
             do {
                 json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions())
             } catch {
