@@ -20,6 +20,8 @@
 		55AA6AA81C25F42E00D49926 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA6AA71C25F42E00D49926 /* InterfaceController.swift */; };
 		55AA6AAA1C25F42E00D49926 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA6AA91C25F42E00D49926 /* ExtensionDelegate.swift */; };
 		55AA6AAC1C25F42E00D49926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AA6AAB1C25F42E00D49926 /* Assets.xcassets */; };
+		55D752611EDF871E009C7F97 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D752601EDF871E009C7F97 /* ComplicationController.swift */; };
+		55D752651EE0D67E009C7F97 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 55D752641EE0D67E009C7F97 /* gallery.ckcomplication */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		55AA6AA91C25F42E00D49926 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		55AA6AAB1C25F42E00D49926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55AA6AAD1C25F42E00D49926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D752601EDF871E009C7F97 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		55D752641EE0D67E009C7F97 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		55AA6A831C25F42E00D49926 /* DCTrains */ = {
 			isa = PBXGroup;
 			children = (
+				55D752641EE0D67E009C7F97 /* gallery.ckcomplication */,
 				55AA6A841C25F42E00D49926 /* AppDelegate.swift */,
 				55AA6A861C25F42E00D49926 /* ViewController.swift */,
 				55AA6A881C25F42E00D49926 /* Main.storyboard */,
@@ -148,6 +153,7 @@
 		55AA6AA61C25F42E00D49926 /* DCTrains WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				55D752601EDF871E009C7F97 /* ComplicationController.swift */,
 				55AA6AA71C25F42E00D49926 /* InterfaceController.swift */,
 				55AA6AA91C25F42E00D49926 /* ExtensionDelegate.swift */,
 				55AA6AAB1C25F42E00D49926 /* Assets.xcassets */,
@@ -220,7 +226,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Peter Olsen";
 				TargetAttributes = {
 					55AA6A801C25F42E00D49926 = {
@@ -265,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D752651EE0D67E009C7F97 /* gallery.ckcomplication in Resources */,
 				55AA6A8F1C25F42E00D49926 /* LaunchScreen.storyboard in Resources */,
 				55AA6A8C1C25F42E00D49926 /* Assets.xcassets in Resources */,
 				55AA6A8A1C25F42E00D49926 /* Main.storyboard in Resources */,
@@ -305,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55AA6AAA1C25F42E00D49926 /* ExtensionDelegate.swift in Sources */,
+				55D752611EDF871E009C7F97 /* ComplicationController.swift in Sources */,
 				55032E7F1C25FABF008624CF /* ApiKey.swift in Sources */,
 				55AA6AA81C25F42E00D49926 /* InterfaceController.swift in Sources */,
 			);
@@ -436,6 +444,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -444,6 +453,7 @@
 		55AA6AB11C25F42E00D49926 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEVELOPMENT_TEAM = X65NKP2EV4;
 				INFOPLIST_FILE = "DCTrains WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -460,6 +470,7 @@
 		55AA6AB21C25F42E00D49926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				DEVELOPMENT_TEAM = X65NKP2EV4;
 				INFOPLIST_FILE = "DCTrains WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
