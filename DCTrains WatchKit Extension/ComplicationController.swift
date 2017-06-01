@@ -33,16 +33,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        let template = CLKComplicationTemplateCircularSmallSimpleImage()
-        let image = UIImage(named: "Complication/Circular")
-        template.imageProvider = CLKImageProvider(onePieceImage: image!)
+        let template = getComplicationTemplate()
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
         handler(entry)
-//        let template = CLKComplicationTemplateCircularSmallSimpleText()
-//        template.textProvider = CLKSimpleTextProvider(text: "M")
-//        let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
-//        print("getCurrentTimelineEntry()")
-//        handler(entry)
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
@@ -59,15 +52,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
+        let template = getComplicationTemplate()
+        handler(template)
+    }
+
+    func getComplicationTemplate() -> CLKComplicationTemplate {
         let image = UIImage(named: "Complication/Circular")
         let imageProvider = CLKImageProvider(onePieceImage: image!)
-        let complicationTemplate = CLKComplicationTemplateCircularSmallSimpleImage()
-        complicationTemplate.imageProvider = imageProvider
-        handler(complicationTemplate)
-//        let template = CLKComplicationTemplateCircularSmallSimpleText()
-//        template.textProvider = CLKSimpleTextProvider(text: "M")
-//        print("getLocalizableSampleTemplate()")
-//        handler(template)
+        let template = CLKComplicationTemplateCircularSmallSimpleImage()
+        template.imageProvider = imageProvider
+        return template
     }
     
 }
