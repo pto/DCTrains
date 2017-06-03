@@ -1,0 +1,10 @@
+{
+  "imageProvider" : {
+    "onePieceImage" : {
+      "file name" : "1991CC13-28F2-493F-BD34-83F2315581D2.png",
+      "scale" : 2
+    }
+  },
+  "class" : "CLKComplicationTemplateModularSmallSimpleImage",
+  "version" : 30000
+}

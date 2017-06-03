@@ -1,0 +1,10 @@
+{
+  "imageProvider" : {
+    "onePieceImage" : {
+      "file name" : "6BC0EC3E-ACCA-4562-BCA1-1F8CFE0DD999.png",
+      "scale" : 2
+    }
+  },
+  "class" : "CLKComplicationTemplateCircularSmallSimpleImage",
+  "version" : 30000
+}

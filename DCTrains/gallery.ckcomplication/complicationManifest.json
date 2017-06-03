@@ -1,6 +1,9 @@
 {
   "supported complication families" : {
-    "4" : "98434770-A435-4C17-B3A9-30DCA395F255.json"
+    "4" : "6AFA81FD-EDC2-46C4-B112-C6A2EB21BE48.json",
+    "2" : "0AE98E00-0A1F-4488-8FED-C9E1E0DE975F.json",
+    "0" : "0E85AC53-FF5A-48D9-9447-3A0795F23981.json",
+    "7" : "5DCE5DF3-B199-4891-A62F-4206BB24A369.json"
   },
   "client ID" : "me.pto.DCTrains.watchkitapp.watchkitextension"
 }

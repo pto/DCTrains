@@ -23,9 +23,14 @@ class IncidentController: NSObject {
 class InterfaceController: WKInterfaceController {
     @IBOutlet var incidents: WKInterfaceTable?
     @IBOutlet var ballstonWest: WKInterfaceTable?
+    var ballstonWestTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var ballstonEast: WKInterfaceTable?
+    var ballstonEastTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var tysons: WKInterfaceTable?
+    var tysonsTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var metroCenter: WKInterfaceTable?
+    var metroCenterTime = Date(timeIntervalSince1970: 0)
+    var incidentsTime = Date(timeIntervalSince1970: 0)
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -36,15 +41,30 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
         
         if ballstonWest != nil {
-            loadDataFor(ballstonWest!, station: "K04", track: "2")
+            if Date().timeIntervalSince(ballstonWestTime) > 15 {
+                loadDataFor(ballstonWest!, station: "K04", track: "2")
+                ballstonWestTime = Date()
+            }
         } else if ballstonEast != nil {
-            loadDataFor(ballstonEast!, station: "K04", track: "1")
+            if Date().timeIntervalSince(ballstonEastTime) > 15 {
+                loadDataFor(ballstonEast!, station: "K04", track: "1")
+                ballstonEastTime = Date()
+            }
         } else if tysons != nil {
-            loadDataFor(tysons!, station: "N02", track: "1")
+            if Date().timeIntervalSince(tysonsTime) > 15 {
+                loadDataFor(tysons!, station: "N02", track: "1")
+                tysonsTime = Date()
+            }
         } else if metroCenter != nil {
-            loadDataFor(metroCenter!, station: "C01", track: "2")
+            if Date().timeIntervalSince(metroCenterTime) > 15 {
+                loadDataFor(metroCenter!, station: "C01", track: "2")
+                metroCenterTime = Date()
+            }
         } else if incidents != nil {
-            loadIncidents(incidents!)
+            if Date().timeIntervalSince(incidentsTime) > 15 {
+                loadIncidents(incidents!)
+                incidentsTime = Date()
+            }
         }
     }
     

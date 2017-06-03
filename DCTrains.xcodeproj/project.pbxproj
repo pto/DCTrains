@@ -21,7 +21,7 @@
 		55AA6AAA1C25F42E00D49926 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA6AA91C25F42E00D49926 /* ExtensionDelegate.swift */; };
 		55AA6AAC1C25F42E00D49926 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55AA6AAB1C25F42E00D49926 /* Assets.xcassets */; };
 		55D752611EDF871E009C7F97 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D752601EDF871E009C7F97 /* ComplicationController.swift */; };
-		55D752651EE0D67E009C7F97 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 55D752641EE0D67E009C7F97 /* gallery.ckcomplication */; };
+		55D752691EE243D1009C7F97 /* gallery.ckcomplication in Resources */ = {isa = PBXBuildFile; fileRef = 55D752681EE243D1009C7F97 /* gallery.ckcomplication */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		55AA6AAB1C25F42E00D49926 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55AA6AAD1C25F42E00D49926 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D752601EDF871E009C7F97 /* ComplicationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
-		55D752641EE0D67E009C7F97 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
+		55D752681EE243D1009C7F97 /* gallery.ckcomplication */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gallery.ckcomplication; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 		55AA6A831C25F42E00D49926 /* DCTrains */ = {
 			isa = PBXGroup;
 			children = (
-				55D752641EE0D67E009C7F97 /* gallery.ckcomplication */,
+				55D752681EE243D1009C7F97 /* gallery.ckcomplication */,
 				55AA6A841C25F42E00D49926 /* AppDelegate.swift */,
 				55AA6A861C25F42E00D49926 /* ViewController.swift */,
 				55AA6A881C25F42E00D49926 /* Main.storyboard */,
@@ -271,7 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D752651EE0D67E009C7F97 /* gallery.ckcomplication in Resources */,
+				55D752691EE243D1009C7F97 /* gallery.ckcomplication in Resources */,
 				55AA6A8F1C25F42E00D49926 /* LaunchScreen.storyboard in Resources */,
 				55AA6A8C1C25F42E00D49926 /* Assets.xcassets in Resources */,
 				55AA6A8A1C25F42E00D49926 /* Main.storyboard in Resources */,

@@ -33,9 +33,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
         // Call the handler with the current timeline entry
-        let template = getComplicationTemplate()
-        let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
-        handler(entry)
+        let template = getComplicationTemplate(for: complication)
+        if let t = template {
+            let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: t)
+            handler(entry)
+        }
     }
     
     func getTimelineEntries(for complication: CLKComplication, before date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
@@ -52,16 +54,40 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
-        let template = getComplicationTemplate()
-        handler(template)
+        let template = getComplicationTemplate(for: complication)
+        if let t = template {
+            handler(t)
+        }
     }
 
-    func getComplicationTemplate() -> CLKComplicationTemplate {
-        let image = UIImage(named: "Complication/Circular")
-        let imageProvider = CLKImageProvider(onePieceImage: image!)
-        let template = CLKComplicationTemplateCircularSmallSimpleImage()
-        template.imageProvider = imageProvider
-        return template
+    func getComplicationTemplate(for complication: CLKComplication) -> CLKComplicationTemplate? {
+        switch complication.family {
+        case .circularSmall:
+            let image = UIImage(named: "Complication/Circular")
+            let imageProvider = CLKImageProvider(onePieceImage: image!)
+            let template = CLKComplicationTemplateCircularSmallSimpleImage()
+            template.imageProvider = imageProvider
+            return template
+        case .modularSmall:
+            let image = UIImage(named: "Complication/Modular")
+            let imageProvider = CLKImageProvider(onePieceImage: image!)
+            let template = CLKComplicationTemplateModularSmallSimpleImage()
+            template.imageProvider = imageProvider
+            return template
+        case .extraLarge:
+            let image = UIImage(named: "Complication/Extra Large")
+            let imageProvider = CLKImageProvider(onePieceImage: image!)
+            let template = CLKComplicationTemplateExtraLargeSimpleImage()
+            template.imageProvider = imageProvider
+            return template
+        case .utilitarianSmall:
+            let image = UIImage(named: "Complication/Utilitarian")
+            let imageProvider = CLKImageProvider(onePieceImage: image!)
+            let template = CLKComplicationTemplateUtilitarianSmallSquare()
+            template.imageProvider = imageProvider
+            return template
+        default:
+            return nil
+        }
     }
-    
 }
