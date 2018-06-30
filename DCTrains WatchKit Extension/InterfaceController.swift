@@ -175,7 +175,7 @@ class InterfaceController: WKInterfaceController {
                 default:
                     lineColor = UIColor.white
                 }
-                let dest = NSAttributedString(string: result.dest, attributes: [NSForegroundColorAttributeName:lineColor])
+                let dest = NSAttributedString(string: result.dest, attributes: [NSAttributedStringKey.foregroundColor:lineColor])
                 row.destination.setAttributedText(dest)
                 row.minutes.setText(result.min)
             }

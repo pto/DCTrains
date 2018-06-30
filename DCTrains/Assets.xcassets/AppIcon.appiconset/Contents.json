@@ -1,13 +1,15 @@
 {
   "images" : [
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "DC Trains 40x40.jpg",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "DC Trains 60x60.jpg",
       "scale" : "3x"
     },
     {
@@ -45,6 +47,12 @@
       "idiom" : "iphone",
       "filename" : "DCTrains60@3x.png",
       "scale" : "3x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "DC Trains.jpg",
+      "scale" : "1x"
     }
   ],
   "info" : {
