@@ -105,7 +105,7 @@ class InterfaceController: WKInterfaceController {
         let task = session.dataTask(with: url, completionHandler: {
             data, response, error in
             
-            var results: [(line: String, dest: String, min: String)] = []
+            var results: [(line: String, dest: String, min: String, car: String)] = []
             
             guard let data = data else {
                 setTableText("No data")
@@ -160,9 +160,11 @@ class InterfaceController: WKInterfaceController {
                     return
                 }
                 minutes = minutes.capitalized
+
+                let car = train["Car"] as? String ?? ""
                 
                 if group == track {
-                    results.append((line: line, dest: destination, min: minutes))
+                    results.append((line: line, dest: destination, min: minutes, car: car))
                 }
             }
             if results.count == 0 {
@@ -191,7 +193,8 @@ class InterfaceController: WKInterfaceController {
                 }
                 let dest = NSAttributedString(string: result.dest, attributes: [NSAttributedStringKey.foregroundColor:lineColor])
                 row.destination.setAttributedText(dest)
-                row.minutes.setText(result.min)
+                let mins = NSAttributedString(string: result.min, attributes: [NSAttributedStringKey.foregroundColor: result.car == "8" ? UIColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 1.0) : UIColor.white])
+                row.minutes.setAttributedText(mins)
             }
         })
         task.resume()
