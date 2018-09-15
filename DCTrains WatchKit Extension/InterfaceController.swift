@@ -29,6 +29,10 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var tysons: WKInterfaceTable?
     var tysonsTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var metroCenter: WKInterfaceTable?
+    var rosslynTime = Date(timeIntervalSince1970: 0)
+    @IBOutlet var rosslyn: WKInterfaceTable?
+    var foggyBottomTime = Date(timeIntervalSince1970: 0)
+    @IBOutlet var foggyBottom: WKInterfaceTable?
     var metroCenterTime = Date(timeIntervalSince1970: 0)
     var incidentsTime = Date(timeIntervalSince1970: 0)
     
@@ -54,6 +58,16 @@ class InterfaceController: WKInterfaceController {
             if Date().timeIntervalSince(tysonsTime) > 15 {
                 loadDataFor(tysons!, station: "N02", track: "1")
                 tysonsTime = Date()
+            }
+        } else if rosslyn != nil {
+            if Date().timeIntervalSince(rosslynTime) > 15 {
+                loadDataFor(rosslyn!, station: "C05", track: "2")
+                rosslynTime = Date()
+            }
+        } else if foggyBottom != nil {
+            if Date().timeIntervalSince(foggyBottomTime) > 15 {
+                loadDataFor(foggyBottom!, station: "C04", track: "2")
+                foggyBottomTime = Date()
             }
         } else if metroCenter != nil {
             if Date().timeIntervalSince(metroCenterTime) > 15 {
