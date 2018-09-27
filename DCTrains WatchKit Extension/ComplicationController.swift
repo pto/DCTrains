@@ -92,6 +92,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             let template = CLKComplicationTemplateGraphicCircularImage()
             template.imageProvider = imageProvider
             return template
+        case .graphicCorner:
+            let image = UIImage(named: "Complication/Graphic Corner")
+            let imageProvider = CLKFullColorImageProvider(fullColorImage: image!)
+            let template = CLKComplicationTemplateGraphicCornerCircularImage()
+            template.imageProvider = imageProvider
+            return template
         default:
             return nil
         }
