@@ -191,9 +191,9 @@ class InterfaceController: WKInterfaceController {
                 default:
                     lineColor = UIColor.white
                 }
-                let dest = NSAttributedString(string: result.dest, attributes: [NSAttributedStringKey.foregroundColor:lineColor])
+                let dest = NSAttributedString(string: result.dest, attributes: [NSAttributedString.Key.foregroundColor:lineColor])
                 row.destination.setAttributedText(dest)
-                let mins = NSAttributedString(string: result.min, attributes: [NSAttributedStringKey.foregroundColor: result.car == "8" ? UIColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 1.0) : UIColor.white])
+                let mins = NSAttributedString(string: result.min, attributes: [NSAttributedString.Key.foregroundColor: result.car == "8" ? UIColor(red: 0.5, green: 1.0, blue: 0.5, alpha: 1.0) : UIColor.white])
                 row.minutes.setAttributedText(mins)
             }
         })
