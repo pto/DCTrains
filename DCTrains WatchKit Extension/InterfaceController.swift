@@ -43,7 +43,14 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
+        updateData()
+    }
+    
+    override func didAppear() {
+        updateData()
+    }
+    
+    func updateData() {
         if ballstonWest != nil {
             if Date().timeIntervalSince(ballstonWestTime) > 15 {
                 loadDataFor(ballstonWest!, station: "K04", track: "2")
