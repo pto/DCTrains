@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		55032E7F1C25FABF008624CF /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55032E7E1C25FABF008624CF /* ApiKey.swift */; };
+		5583C2B1237ECBCE0026C66D /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5583C2B0237ECBCE0026C66D /* ApiKey.swift */; };
 		55AA6A851C25F42E00D49926 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA6A841C25F42E00D49926 /* AppDelegate.swift */; };
 		55AA6A871C25F42E00D49926 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AA6A861C25F42E00D49926 /* ViewController.swift */; };
 		55AA6A8A1C25F42E00D49926 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AA6A881C25F42E00D49926 /* Main.storyboard */; };
@@ -67,7 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		55032E7E1C25FABF008624CF /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		5583C2B0237ECBCE0026C66D /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		55AA6A811C25F42E00D49926 /* DCTrains.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCTrains.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55AA6A841C25F42E00D49926 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55AA6A861C25F42E00D49926 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,12 +153,12 @@
 		55AA6AA61C25F42E00D49926 /* DCTrains WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				5583C2B0237ECBCE0026C66D /* ApiKey.swift */,
 				55D752601EDF871E009C7F97 /* ComplicationController.swift */,
 				55AA6AA71C25F42E00D49926 /* InterfaceController.swift */,
 				55AA6AA91C25F42E00D49926 /* ExtensionDelegate.swift */,
 				55AA6AAB1C25F42E00D49926 /* Assets.xcassets */,
 				55AA6AAD1C25F42E00D49926 /* Info.plist */,
-				55032E7E1C25FABF008624CF /* ApiKey.swift */,
 			);
 			path = "DCTrains WatchKit Extension";
 			sourceTree = "<group>";
@@ -313,7 +313,7 @@
 			files = (
 				55AA6AAA1C25F42E00D49926 /* ExtensionDelegate.swift in Sources */,
 				55D752611EDF871E009C7F97 /* ComplicationController.swift in Sources */,
-				55032E7F1C25FABF008624CF /* ApiKey.swift in Sources */,
+				5583C2B1237ECBCE0026C66D /* ApiKey.swift in Sources */,
 				55AA6AA81C25F42E00D49926 /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +556,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = X65NKP2EV4;
 				INFOPLIST_FILE = DCTrains/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,6 +574,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = X65NKP2EV4;
 				INFOPLIST_FILE = DCTrains/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
