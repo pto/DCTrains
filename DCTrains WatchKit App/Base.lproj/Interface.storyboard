@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LD4-SW-sKC">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15702" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LD4-SW-sKC">
+    <device id="watch38"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -130,7 +129,7 @@
             <objects>
                 <controller id="zXh-eC-iSl" customClass="InterfaceController" customModule="DCTrains_WatchKit_Extension">
                     <items>
-                        <label alignment="center" text="Tysons Corner" id="VRG-Wn-jc8">
+                        <label alignment="center" text="McLean" id="VRG-Wn-jc8">
                             <fontDescription key="font" type="boldSystem" pointSize="16"/>
                         </label>
                         <separator alignment="left" id="WXJ-ym-Fns">
@@ -158,7 +157,7 @@
                         </table>
                     </items>
                     <connections>
-                        <outlet property="tysons" destination="dxJ-Ie-F5I" id="j16-Tb-WcZ"/>
+                        <outlet property="mclean" destination="dxJ-Ie-F5I" id="DiC-g6-D7g"/>
                         <segue destination="oXV-As-aKy" kind="relationship" relationship="nextPage" id="6Kx-ED-ve9"/>
                     </connections>
                 </controller>

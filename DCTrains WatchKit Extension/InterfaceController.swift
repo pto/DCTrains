@@ -26,8 +26,8 @@ class InterfaceController: WKInterfaceController {
     var ballstonWestTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var ballstonEast: WKInterfaceTable?
     var ballstonEastTime = Date(timeIntervalSince1970: 0)
-    @IBOutlet var tysons: WKInterfaceTable?
-    var tysonsTime = Date(timeIntervalSince1970: 0)
+    @IBOutlet var mclean: WKInterfaceTable?
+    var mcleanTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var metroCenter: WKInterfaceTable?
     var rosslynTime = Date(timeIntervalSince1970: 0)
     @IBOutlet var rosslyn: WKInterfaceTable?
@@ -61,10 +61,10 @@ class InterfaceController: WKInterfaceController {
                 loadDataFor(ballstonEast!, station: "K04", track: "1")
                 ballstonEastTime = Date()
             }
-        } else if tysons != nil {
-            if Date().timeIntervalSince(tysonsTime) > 15 {
-                loadDataFor(tysons!, station: "N02", track: "1")
-                tysonsTime = Date()
+        } else if mclean != nil {
+            if Date().timeIntervalSince(mcleanTime) > 15 {
+                loadDataFor(mclean!, station: "N01", track: "1")
+                mcleanTime = Date()
             }
         } else if rosslyn != nil {
             if Date().timeIntervalSince(rosslynTime) > 15 {
